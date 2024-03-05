@@ -202,9 +202,7 @@ def cross_entropy_loss_gradient(actual_labels, predicted_probs):
     return gradient
 
 
-
-
-def train_network(X, y, conv, pool, full, lr=0.01, epochs= 10):
+def train_network(X, y, conv, pool, full, lr=0.01, epochs= 20):
     for epoch in range(epochs):
         total_loss = 0.0
         correct_predictions = 0
@@ -251,6 +249,8 @@ def predict(input_sample, conv, pool, full):
 conv = Convolution(X_train[0].shape, 6, 1)
 pool = MaxPool(2)
 full = Fully_Connected(121, 10)
+
+train_network(X_train, y_train, conv, pool, full)
 
 
 # predictions = []
